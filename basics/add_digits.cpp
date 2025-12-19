@@ -1,31 +1,23 @@
 // Problem: 258 - Add Digits
-// Leetcode: https://leetcode.com/problems/add-digits/description/
+// Leetcode: https://leetcode.com/problems/add-digits/
 
-// Approach: Repeatedly sum digits until a single-digit number is obtained
-// Time Complexity: O(log10(num))
+// Solution Type: Math / Digital Root
+// Approach: Used the 'Digital Root' concept.
+//           If the number is 0, return 0.
+//           If the number is divisible by 9, the result is 9.
+//           Otherwise, the result is num % 9.
+// Time Complexity: O(1)
 // Space Complexity: O(1)
-
 
 class Solution {
 public:
     int addDigits(int num) {
-        if(num <= 9)
-            return num;
+        if (num == 0)
+            return 0;
 
-        while(num > 9){
-            int finalSum = 0;
+        if (num % 9 == 0)
+            return 9;
 
-            while(num > 0){
-                finalSum += (num % 10);
-                num /= 10;
-            }
-
-            if(finalSum <= 9)
-                return finalSum;
-
-            num = finalSum;
-        }
-
-        return -1; // Theoretically it will never reach, added just for completeness
+        return num % 9;
     }
 };
