@@ -10,15 +10,3 @@
 
 // Time Complexity: O(n),  where n is the length of the string.
 // Space Complexity: O(1)
-
-class Solution {
-public:
-    string toLowerCase(string s) {
-        for (char &c : s) {
-            if (c >= 'A' && c <= 'Z') {
-                c = c - 'A' + 'a';
-            }
-        }
-        return s;
-    }
-};

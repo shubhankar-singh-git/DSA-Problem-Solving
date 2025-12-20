@@ -8,13 +8,3 @@
 //           So, on taking 'AND' of n and (n-1) will result 0.
 // Time Complexity: O(1)
 // Space Complexity: O(1)
-
-class Solution {
-public:
-    bool isPowerOfTwo(int n) {
-        if (n <= 0)
-            return false;
-
-        return (n & (n - 1)) == 0;
-    }
-};
